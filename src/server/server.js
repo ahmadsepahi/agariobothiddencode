@@ -278,7 +278,7 @@ function tickPlayer(currentPlayer) {
 
                     // Отсылаем всем другим игрокам о смерте игрока 2
 
-                    global.sockets[collision.bUser.id].emit('RIP', 'You cannot take the survey due to Collision. Please Try again in a few seconds.');
+                    global.sockets[collision.bUser.id].emit('RIP', 'You cannot take the survey due to Collision. Please try again in a few seconds.');
                     /*                    if(currentPlayer.type ==='player'){
                                             var clean = path.join(__dirname, "../../Bot/clean.sh");
                                             const {spawn} = require('child_process');

@@ -17,7 +17,7 @@ html
         script(type="text/javascript").
             function validateForm() {
                 var finished = true;
-                for (var i = 1; i < 4; i++) {
+                for (var i = 1; i < 3; i++) {
                     if (document.getElementById("answer")["inlineRadioOptions" + i].value == 0)
                         finished = false;
                 }
@@ -62,33 +62,20 @@ html
                         p(class="lead")=question
                         div(class='form-check form-check-inline')
                             input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio1" + index value=1)
-                            label(class="form-check-label" for="inlineRadio1") 1 (Very Poor)
-                        each val in [ 2, 3, 4]
-                            div(class='form-check form-check-inline')
-                                input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio" + val + index value=val)
-                                label(class="form-check-label" for="inlineRadio" + val)=val
-                        div(class='form-check form-check-inline')
-                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio5" + index value=5)
-                            label(class="form-check-label" for="inlineRadio5") 5 (Superb)
-            each question,index in questions3
-                div(class="card")
-                    div(class="card-body")
-                        p(class="lead")=question
-                        div(class='form-check form-check-inline')
-                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio1" + index value=1)
-                            label(class="form-check-label" for="inlineRadio1") [0-100]
+                            label(class="form-check-label" for="inlineRadio1") [0-50]
 
                         div(class='form-check form-check-inline')
                             input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio2" + index value=2)
-                            label(class="form-check-label" for="inlineRadio2") [101-250]
+                            label(class="form-check-label" for="inlineRadio2") [51-150]
 
                         div(class='form-check form-check-inline')
                             input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio3" + index value=3)
-                            label(class="form-check-label" for="inlineRadio3") [251-400]
+                            label(class="form-check-label" for="inlineRadio3") [151-300]
 
                         div(class='form-check form-check-inline')
                             input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio4" + index value=4)
-                            label(class="form-check-label" for="inlineRadio4") [401-800]
+                            label(class="form-check-label" for="inlineRadio4") [301-800]
+
             div(class="card")
 
                 div(class="card-body")

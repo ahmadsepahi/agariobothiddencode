@@ -43,7 +43,9 @@ exports.connect = function (io) {
                 x: position.x,
                 y: position.y,
                 radius: radius
+                
             }];
+            //console.log(position);
             massTotal = conf.defaultPlayerMass;
         }
 

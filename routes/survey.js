@@ -30,12 +30,9 @@ QUESTIONS1={
 };
 QUESTIONS2={
 
-    2: "2- How well do you perform in the game?",
+    2: "2- What is your score range?"
 };
-QUESTIONS3={
 
-    3: "3- What is your score range?"
-};
 
 
 router.get('/:playerName/:ping/:point/:totalTime/:urlAddr', function(req, res){
@@ -48,7 +45,7 @@ router.get('/:playerName/:ping/:point/:totalTime/:urlAddr', function(req, res){
     state = retUrlAddr.substring(0,2);
     //console.log("state", state);
 
-    res.render('question', { title: 'Survey', playerName: req.params.playerName, ping:req.params.ping, point: req.params.point,  totalTime:req.params.totalTime, urlAddr:req.params.urlAddr, questions1:QUESTIONS1, questions2:QUESTIONS2, questions3:QUESTIONS3});
+    res.render('question', { title: 'Survey', playerName: req.params.playerName, ping:req.params.ping, point: req.params.point,  totalTime:req.params.totalTime, urlAddr:req.params.urlAddr, questions1:QUESTIONS1, questions2:QUESTIONS2});
 });
 
 router.post('/:playerName/:ping/:point/:totalTime/:urlAddr', function(req, res){
