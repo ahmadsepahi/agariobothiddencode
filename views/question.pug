@@ -1,0 +1,101 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+        style.
+            body {
+                padding: 50px;
+                font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+            }
+
+            a {
+                color: #00B7FF;
+            }
+
+        script(type="text/javascript").
+            function validateForm() {
+                var finished = true;
+                for (var i = 1; i < 4; i++) {
+                    if (document.getElementById("answer")["inlineRadioOptions" + i].value == 0)
+                        finished = false;
+                }
+                // alert(document.getElementById("userId").value);
+                // console.log(document.getElementById("userId").value);
+                //if ((document.getElementById("userId").value == ''))
+                    //finished = false;
+                // window.alert("finished:" + finished);
+                if (!finished) {
+                    window.alert("Please finish filling out the form before submission.");
+                    return false;
+                }
+                if (confirm('Do you want to submit?')) {
+                    document.getElementById("answer").submit();
+                    //top.window.close();
+                } else {
+                    return false;
+                }
+            }
+
+    body
+
+        h3=title
+        form(class="form-group" id="answer" action="/survey/"+playerName+"/"+ping+"/"+point+"/"+totalTime+"/"+urlAddr method="POST" onsubmit="return validateForm()" name="surveyform")
+            each question,index in questions1
+                div(class="card")
+                    div(class="card-body")
+                        p(class="lead")=question
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions"+index id="inlineRadio1"+index value=1)
+                            label(class="form-check-label" for="inlineRadio1") 1 (Strongly dissatisfied)
+                        each val in [ 2, 3, 4]
+                            div(class='form-check form-check-inline')
+                                input(class="form-check-input" type="radio" name="inlineRadioOptions"+index id="inlineRadio"+val+index value=val)
+                                label(class="form-check-label" for="inlineRadio"+val)=val
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions"+index id="inlineRadio5"+index value=5)
+                            label(class="form-check-label" for="inlineRadio5") 5 (Strongly satisfied)
+            each question,index in questions2
+                div(class="card")
+                    div(class="card-body")
+                        p(class="lead")=question
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio1" + index value=1)
+                            label(class="form-check-label" for="inlineRadio1") 1 (Very Poor)
+                        each val in [ 2, 3, 4]
+                            div(class='form-check form-check-inline')
+                                input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio" + val + index value=val)
+                                label(class="form-check-label" for="inlineRadio" + val)=val
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio5" + index value=5)
+                            label(class="form-check-label" for="inlineRadio5") 5 (Superb)
+            each question,index in questions3
+                div(class="card")
+                    div(class="card-body")
+                        p(class="lead")=question
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio1" + index value=1)
+                            label(class="form-check-label" for="inlineRadio1") [0-100]
+
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio2" + index value=2)
+                            label(class="form-check-label" for="inlineRadio2") [101-250]
+
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio3" + index value=3)
+                            label(class="form-check-label" for="inlineRadio3") [251-400]
+
+                        div(class='form-check form-check-inline')
+                            input(class="form-check-input" type="radio" name="inlineRadioOptions" + index id="inlineRadio4" + index value=4)
+                            label(class="form-check-label" for="inlineRadio4") [401-800]
+            div(class="card")
+
+                div(class="card-body")
+                    //p(class="lead") User ID
+                    //input(type="string" class="form-control" name="userId" id="userId" placeholder="User ID")
+                    //label(for="userId")
+            div
+                button(type="submit" class="btn btn-primary") Submit
+
+

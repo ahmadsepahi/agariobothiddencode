@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta Properties -->
+    <meta charset="UTF-8">
+    <title>SurveyPhase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <style>
+        html,body,h1,h2,h3,h4,h5,p {font-family: "Arial","Helvetica","Times New Roman",sans-serif}
+    </style>
+</head>
+
+<body>
+
+
+<!-- Меню пользователя Нагуслаев Николай-->
+<div id="gameAreaWrapper">
+    <canvas tabindex="1" id="cvs"></canvas>
+</div>
+<div>
+    <button id="surveyBotton" style="visibility:hidden">Take Survey</button>
+</div>
+<div id="description" style="LINE-HEIGHT:30px;">
+    <p style="text-align:center;font-size:26px; color:Black; font-weight:bold;">Game setup and controls (same for all game instances)</p>
+    <ol style="list-style-type: circle">
+        <li>Your goal is to grow the size of your “cell” by eating (or bumping into) other smaller cells.</li>
+        <li>If you collide into a bot player bigger than yourself, you will get “eaten” and that game will end.</li>
+        <li>REMINDER: For a game to count as successful, you need to score a minimum of 125 points within a maximum of 60 seconds.</li>
+        <li>Controls:
+            <ol class="d">
+                <li>Use the arrow keys or WASD keys to move your cell.</li>
+                <li>If your game ends prematurely -- either because you don’t score the required minimum points within the  maximum time or because of collision with a bigger bot player -- you can refresh the page (or wait 5 seconds for the page to be refreshed automatically) and play that game again until you succeed.</li>
+            </ol>
+        </li>
+    </ol>
+</div>
+
+<div id="startMenuWrapper">
+    <div id="startMenu">
+        <p>Agar.io by KI14-06B</p>
+        <input type="text" tabindex="0" autofocus id="playerNameInput" maxlength="25" disabled />
+        <b class="input-error">Invalid characters in player name</b>
+
+        <br />
+        <button id="startButton">Play</button>
+        <!--<button id="spectateButton"style="visibility:hidden">Watch</button>-->
+        <br />
+        <!-- Модальное окно с инструкцией Рубан Анна-->
+        <a href="#openModal" ><h2 class="ins">How to Play?</h2></a>
+    </div>
+</div>
+
+<div id="openModal" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+
+        <h3>How to Play</h3>
+        <ul>
+            <li>Using the keyboard, namely using the keys (arrows or a, w, s, d), move the ball.</li>
+            <li>Eat a smaller hero or food scattered across the field.</li>
+            <li>Stay alive.</li>
+        </ul>
+    </div>
+</div>
+<div style="visibility: hidden">
+    <p id="url"/>
+    <script>
+        //var url = document.getElementById("url").innerHTML = window.location.href;
+        var url =  window.location.href;
+        //console.log("URL", url);
+        var playerName = '';
+        var id_head = url.indexOf("?");
+        if(id_head !== -1) {
+
+            var id_tail = id_head + url.substring(id_head).indexOf("-");
+            playerName = url.substring(id_head+1,id_tail)
+            //var addrExt = url.substring(id_head+1, url.length)
+            //var id_tail = addrExt.indexOf("-");
+        }
+
+        document.getElementById("playerNameInput").setAttribute("value", playerName);
+        document.getElementById("url").setAttribute("value",window.location.href);
+    </script>
+</div>
+<!-- JS -->
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "host": "0.0.0.0",
+    "port": 3000,
+    "_comment": "Don't change this port unless you change the bot default port",
+    "finishScoreActive": true,
+    "finishScore": 125,
+    "finishTimeActive": true,
+    "finishTime" : 60000,
+    "foodMass": 1,
+    "fireFood": 20,
+    "limitSplit": 16,
+    "defaultPlayerMass": 10,
+    "gameWidth": 1000,
+    "gameHeight": 1000,
+    "gameMass": 1000,
+    "maxFood": 50,
+    "slowBase": 4.75,
+    "networkUpdateFactor": 40,
+    "maxHeartbeatInterval": 60000,
+    "foodUniformDisposition": true,
+    "newPlayerInitialPosition": "farthest",
+    "massLossRate": 0,
+    "minMassLoss": 50,
+    "mergeTimer": 15,
+    "mongoDBinfo":{
+        "dbHost": "35.196.42.171",
+        "dbPort_client": 3000,
+        "dbPort_server": 3001,
+        "dbPath": "/db"
+    }
+}

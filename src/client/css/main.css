@@ -1,0 +1,293 @@
+/* Файл со стилями к компонентам фронтенда 
+Нагуслаев Николай
+Рубан Анна
+*/
+* {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+html, body {
+    background-color: white;
+}
+a{
+    text-decoration:none;
+}
+html, body, canvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.ins{
+    text-align: center;
+    font-size: 22px;
+    color:black;
+}
+.ins:hover, .ins:focus, .ins:active{
+    color:black;
+}
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+
+}
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 5px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 30px;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top:3px;
+    width: 24px;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+div {
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+#split {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: none;
+}
+
+#feed {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: none;
+}
+
+#status {
+    position: absolute;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #FFF;
+    font-size: 16.1px;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#status .title {
+    font-size: 25px;
+}
+
+#status .me {
+    color: #FF8888;
+    font-size: 16.1px;
+}
+
+#startMenu {
+    position: relative;
+    margin: auto;
+    margin-top: 10px;
+    width: 350px;
+    padding: 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* background-color: white; */
+    box-sizing: border-box;
+}
+
+#startMenu p {
+    padding: 0;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#playerNameInput {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border: solid 1px black;
+    transition: box-shadow 0.3s, border 0.3s;
+    box-sizing: border-box;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+#playerNameInput:focus, #playerNameInput.focus {
+    border: solid 1px black;
+    box-shadow: 0 0 3px 1px black;
+}
+
+#startButton{
+    position: relative;
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: large;
+    color: #222;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    /* background: #2ecc71; */
+    border: solid 1px black;
+    /* border-bottom: 2px solid #28be68; */
+    cursor: pointer;
+    /* -webkit-box-shadow: inset 0 -2px #28be68; */
+    /* box-shadow: inset 0 -2px #28be68; */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#startButton:active, #startButton:hover {
+    top: 1px;
+    background: #bebebe;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#surveyBotton{
+    position: relative;
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: large;
+    color: #222;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #2ecc71; */
+    border: 2px;
+    /* border-bottom: 2px solid #28be68; */
+    cursor: pointer;
+    /* -webkit-box-shadow: inset 0 -2px #28be68; */
+    /* box-shadow: inset 0 -2px #28be68; */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#surveyBotton:active, #surveyBotton:hover{
+    top: 1px;
+    background: #bebebe;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#startMenuWrapper {
+    -webkit-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -ms-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s;
+    /* overflow: hidden; */
+}
+
+#startMenu h3 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#startMenu ul {
+    margin: 10px;
+    padding: 10px;
+    margin-top: 0;
+}
+
+#startMenu .input-error {
+    color: red;
+    opacity: 0;
+    font-size : 12px;
+}
+
+#startMenuWrapper {
+    z-index: 2;
+}
+
+#gameAreaWrapper {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+input [type="image"]:focus{
+    border:none;
+    outline: 1px solid transparent;
+    border-style: none;
+}
+
+*:focus {
+    outline: 1px solid transparent;
+    border-style: none;
+}
+ol.d {
+    counter-reset: item;
+    list-style-type: lower-alpha;
+}
+
+ol {
+    counter-reset: item;
+    list-style-type: none;
+}
+li { display: block }
+li:before {
+    content: counter(item) ". ";
+    counter-increment: item
+}

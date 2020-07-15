@@ -1,0 +1,14 @@
+{
+  "name": "agario",
+  "version": "2.0.0",
+  "description": "A simple Agar.io clone",
+  "main": "src/server/server.js",
+
+  "author": "KI14-06B",
+  "license": "MIT",
+  "repository": "https://git@gitlab.com/unidev/agario.git",
+  "bugs": {
+    "url": "https://gitlab.com/unidev/agario/issues"
+  },
+  "homepage": "https://gitlab.com/unidev/agario#README"
+}
