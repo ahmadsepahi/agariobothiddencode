@@ -43,7 +43,7 @@
         "chai": "^3.5.0",
         "cookie-parser": "^1.4.5",
         "cors": "^2.8.5",
-        "express": "^4.13.4",
+        "express": "^4.17.3",
         "graceful-fs": "^4.2.4",
         "gulp": "^3.9.1",
         "gulp-babel": "^6.1.2",
